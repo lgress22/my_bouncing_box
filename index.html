@@ -1,0 +1,54 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >gress_l</div>
+  <script type="text/javascript">
+
+
+    var box = document.getElementById("my_bouncing_box")
+    var position = 0; 
+    let height = window.innerHeight;
+    let width = window.innerWidth;
+    let left = parseInt(box.style.left)  
+    let direction = 1
+
+    console.log(box.style.minWidth, box.style.minHeight)
+    console.log(width)
+    
+    setInterval(function(){
+        position += direction;
+        // box.style.left = position + "px";
+        box.style.top = position + "px";
+        box.style.left = position + "px";
+        if (parseInt(box.style.left) == width - parseInt(box.style.minWidth)){
+            direction = -1;
+            console.log("left side of box",  parseInt(box.style.left))
+            // direction =- direction;
+            console.log("left", left)
+
+            console.log("right side of screen")
+            console.log(width)
+
+        }
+
+        if(parseInt(box.style.left) == 0){
+    
+            direction = 1;
+        }
+    
+        //  if (parseInt(box.style.left) === width - parseInt(box.style.minWidth)){
+             
+        //      console.log("left side of box",  parseInt(box.style.left))
+        //     // direction =- direction;
+        //     console.log("left", left)
+
+        //     console.log("right side of screen")
+
+        //  }
+         
+            console.log("position left;" , box.style.left, width)
+            // console.log("position left;" , box.style.top, height)
+            
+    }, 10)
+
+
+  </script>
+</html>
