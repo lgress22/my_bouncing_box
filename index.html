@@ -8,46 +8,44 @@
     let height = window.innerHeight;
     let width = window.innerWidth;
     let left = parseInt(box.style.left)  
-    let direction = 1
+    let direction = 1;
 
     console.log(box.style.minWidth, box.style.minHeight)
     console.log(width)
     
     setInterval(function(){
         position += direction;
-        // box.style.left = position + "px";
         box.style.top = position + "px";
         box.style.left = position + "px";
-        if (parseInt(box.style.left) == width - parseInt(box.style.minWidth)){
+        
+        if (parseInt(box.style.left) == height - parseInt(box.style.minHeight)){
             direction = -1;
-            console.log("left side of box",  parseInt(box.style.left))
-            // direction =- direction;
-            console.log("left", left)
+            console.log(parseInt(box.style.top))
 
-            console.log("right side of screen")
-            console.log(width)
+
+            // console.log("left side of box",  parseInt(box.style.left))
+            // direction =- direction;
+            // console.log("left", left)
+
+            // console.log("right side of screen")
+            // console.log(width)
 
         }
 
-        if(parseInt(box.style.left) == 0){
+            if(parseInt(box.style.left) == 0){
     
             direction = 1;
         }
-    
-        //  if (parseInt(box.style.left) === width - parseInt(box.style.minWidth)){
-             
-        //      console.log("left side of box",  parseInt(box.style.left))
-        //     // direction =- direction;
-        //     console.log("left", left)
 
-        //     console.log("right side of screen")
 
-        //  }
-         
-            console.log("position left;" , box.style.left, width)
-            // console.log("position left;" , box.style.top, height)
-            
-    }, 10)
+        // if(parseInt(box.style.top) == height - parseInt(box.style.minHeight)){
+        //     direction = -1;
+        // }
+
+        // if(parseInt(box.style.top) == 0)
+        // direction = 1;
+
+    }, 1)
 
 
   </script>
