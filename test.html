@@ -25,18 +25,18 @@
             boxX += speedX;
             boxY += speedY;
 
-            // check id box has reached edge of window if it has reverse direction
+            // check id box has reached edge of window
             if (boxX + box.offsetWidth > window.innerWidth || boxX < 0) {
                 speedX *= -1
             }
             if (boxY + box.offsetHeight > window.innerHeight || boxY < 0) {
                 speedY *= -1;
             }
-            // Update box position
-            box.style.left = boxX + "px"; 
+            // reset box position
+            box.style.left = boxX + "px";
             box.style.top = boxY + "px";
 
-        }, 1); // final paramater for setInterval method see see final closing yellow brace
+        }, 1); // closeing the function scope from line 23
 
     
 </script>
