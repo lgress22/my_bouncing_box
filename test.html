@@ -1,0 +1,50 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >BabyThanos</div>
+  <script type="text/javascript">
+
+        /* function to determine movement and direction of box
+            - Two things need to happen in the function
+                1.bounce conditions: once boundries are reached reverse direction
+                2.based on direction, determine movement */
+        
+        // call box elements
+        var box = document.getElementById("my_bouncing_box");
+        
+        // set starting position of box
+        var boxX = parseInt(box.style.left);
+        var boxY = parseInt(box.style.top);
+        
+        // set speed
+        var speedX = 1;
+        var speedY = 1;
+        var updateInterval = 1;
+        
+        // run game loop
+        setInterval(function() {
+            // updating box position
+            boxX += speedX;
+            boxY += speedY;
+
+            // check id box has reached edge of window
+            if (boxX + box.offsetWidth > window.innerWidth || boxX < 0) {
+                speedX *= -1
+            }
+            if (boxY + box.offsetHeight > window.innerHeight || boxY < 0) {
+                speedY *= -1;
+            }
+            // reset box position
+            box.style.left = boxX + "px";
+            box.style.top = boxY + "px";
+
+        }, 1); // closeing the function scope from line 23
+
+    
+</script>
+</html>
+   
+   
+   
+   
+   
+   
+   
