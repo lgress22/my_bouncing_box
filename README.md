@@ -2,16 +2,16 @@
 ***
 
 ## Task
-TODO - What is the problem? And where is the challenge?
+Create a box the bounces around the window.
 
 ## Description
-TODO - How have you solved the problem?
+Using conditional statements I created borders that allows the moving box to bounce.
 
 ## Installation
-TODO - How to install your project? npm install? make? make re?
+This exercise is meant for training.
 
 ## Usage
-TODO - How does it work?
+This exercise is meant for training.
 ```
 ./my_project argument1 argument2
 ```
