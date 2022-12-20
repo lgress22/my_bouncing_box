@@ -2,51 +2,44 @@
   <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px; min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >gress_l</div>
   <script type="text/javascript">
 
-
-    var box = document.getElementById("my_bouncing_box")
-    var position = 0; 
-    let height = window.innerHeight;
-    let width = window.innerWidth;
-    let left = parseInt(box.style.left)  
-    let direction = 1;
-
-    console.log(box.style.minWidth, box.style.minHeight)
-    console.log(width)
-    
-    setInterval(function(){
-        position += direction;
-        box.style.top = position + "px";
-        box.style.left = position + "px";
+        /* function to determine movement and direction of box
+            - Two things need to happen in the function
+                1.bounce conditions: once boundries are reached reverse direction
+                2.based on direction, determine movement */
         
-        if (parseInt(box.style.left) == height - parseInt(box.style.minHeight)){
-            direction = -1;
-            console.log(parseInt(box.style.top))
+        // call box elements
+        var box = document.getElementById("my_bouncing_box");
+        
+        // set starting position of box
+        var boxX = parseInt(box.style.left);
+        var boxY = parseInt(box.style.top);
+        
+        // set speed
+        var speedX = 1;
+        var speedY = 1;
+        //var updateInterval = 1;
+        
+        // run game loop
+        setInterval(function() {
+            // updating box position
+            boxX += speedX;
+            boxY += speedY;
 
+            // check id box has reached edge of window
+            if (boxX + box.offsetWidth > window.innerWidth || boxX < 0) {
+                speedX *= -1
+            }
+            if (boxY + box.offsetHeight > window.innerHeight || boxY < 0) {
+                speedY *= -1;
+            }
+            // Updating the box position
+            box.style.left = boxX + "px";
+            box.style.top = boxY + "px";
 
-            // console.log("left side of box",  parseInt(box.style.left))
-            // direction =- direction;
-            // console.log("left", left)
+        }, 1);
 
-            // console.log("right side of screen")
-            // console.log(width)
-
-        }
-
-            if(parseInt(box.style.left) == 0){
     
-            direction = 1;
-        }
-
-
-        // if(parseInt(box.style.top) == height - parseInt(box.style.minHeight)){
-        //     direction = -1;
-        // }
-
-        // if(parseInt(box.style.top) == 0)
-        // direction = 1;
-
-    }, 1)
-
-
-  </script>
+</script>
 </html>
+   
+   
